@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415755831062",
+    "project_id": "mediassifier",
+    "storage_bucket": "mediassifier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415755831062:android:11671780bb915a4896f237",
+        "android_client_info": {
+          "package_name": "com.example.media_classifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415755831062-bo11r3lql08ms7g4hmqsi330aos2t5tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD0XypCg26RyDnUKIPuBSxphm9-fWjTz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415755831062-bo11r3lql08ms7g4hmqsi330aos2t5tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

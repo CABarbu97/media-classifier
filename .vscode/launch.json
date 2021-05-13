@@ -7,8 +7,7 @@
         {
             "name": "media_classifier",
             "request": "launch",
-            "type": "dart",
-            "program": "lib/main.dart"
+            "type": "dart"
         }
     ]
 }
