@@ -12,13 +12,20 @@ Future<void> main() async {
   runApp(Mediassifier());
 }
 
-class Mediassifier extends StatelessWidget {
+class Mediassifier extends StatefulWidget {
+  const Mediassifier() : super();
+
+  @override
+  _MediassifierState createState() => _MediassifierState();
+}
+
+class _MediassifierState extends State<Mediassifier> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         Provider<AuthenticationService>(
-          create: (_) => AuthenticationService(FirebaseAuth.instance),
+          create: (_) => AuthenticationService(),
         ),
         StreamProvider(
           create: (context) =>
@@ -38,11 +45,17 @@ class Mediassifier extends StatelessWidget {
   }
 }
 
-class AuthenticationWrapper extends StatelessWidget {
+class AuthenticationWrapper extends StatefulWidget {
+  const AuthenticationWrapper() : super();
+
+  @override
+  _AuthenticationWrapperState createState() => _AuthenticationWrapperState();
+}
+
+class _AuthenticationWrapperState extends State<AuthenticationWrapper> {
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-
     if (firebaseUser != null) {
       return HomePage();
     }
