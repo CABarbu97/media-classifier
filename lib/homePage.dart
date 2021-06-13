@@ -79,26 +79,36 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(20),
         children: List.generate(_categories.length, (index) {
           return GestureDetector(
+            behavior: HitTestBehavior.translucent,
             onLongPress: () {
-              return AlertDialog(
-                title: Text('Delete category?'),
-                content: Text(
-                    'This will delete the current category and all its components'),
-                actions: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text('Cancel'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      _categories.removeAt(index);
-                    },
-                    child: Text('Delete category'),
-                  ),
-                ],
-              );
+              print("test");
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    print("test2");
+                    return AlertDialog(
+                      title: Text('Delete category?'),
+                      content: Text(
+                          'This will delete the current category and all its components'),
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('Cancel'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              _categories.removeAt(index);
+                              Navigator.pop(context);
+                            });
+                          },
+                          child: Text('Delete category'),
+                        ),
+                      ],
+                    );
+                  });
             },
             onTap: () {
               Navigator.push(context,
